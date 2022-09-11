@@ -18,140 +18,86 @@ import java.util.Scanner;
 public class Atividade_4 {
 	public static void main(String[] args) {
 
-		int idade, op, op1, pessoas=0, calmos=0, mulNerv=0, homAgr=0, outCal=0, nerv40=0, calm18=0;
-
 		Scanner leia = new Scanner (System.in);
 
-		System.out.println("Insira a idade da pessoa: ");
+		int genero, saude, idade, pessoas=0, contCalm=0,contFem=0, contMasc=0, contOut=0, contQua=0, contDezoi=0;
+		
+		System.out.println("Insira sua idade ");
 		idade = leia.nextInt();
 
-		System.out.println ("\n1- Feminino");
-		System.out.println ("\n2- Masculino");
-		System.out.println ("\n3- Outros");
-		op = leia.nextInt();
-
-		switch (op) {
-		case 1:
-			System.out.println("\n1- Feminino");
-			break;
-		case 2:
-			System.out.println("\n2 - Masculino");
-			break;
-		case 3:
-			System.out.println("\n3 - Outros");
-			break;
-
-		default: 
-			System.out.println("\nOpção inválida");
-		}
-
-		System.out.println ("\n1- Calma");
-		System.out.println ("\n2- Nervosa");
-		System.out.println ("\n3- Agressiva");
-		op1 = leia.nextInt();
-
-		switch (op1) {
-		case 1:
-			System.out.println("\n1- Calma");
-			break;
-		case 2:
-			System.out.println("\n2 - Nervosa");
-			break;
-		case 3:
-			System.out.println("\n3 - Agressiva");
-			break;
-
-		default: 
-			System.out.println("\nOpção inválida");
+		System.out.println("Insira seu gênero: ");
+		System.out.println("1- Masculino");
+		System.out.println("2- Feminino");
+		System.out.println("3- Outros");
+		genero= leia.nextInt();
+		
+		System.out.println("Insira seu estado mental:  ");
+		System.out.println("1- Calma");
+		System.out.println("2- Nervosa");
+		System.out.println("3- Agressiva");
+		saude= leia.nextInt();
+		
+		if(saude==1) {
+			contCalm++;
+		}if (genero==2 && saude==2 ) {
+			contFem ++;
+		}if (genero==1 && saude == 3) {
+			contMasc++;
+		}if(genero==3 && saude==1) {
+			contOut++;
+		}if(idade>=40 && saude == 2) {
+			contQua ++;
+		}if (idade<=18 && saude ==1) {
+			contDezoi ++;
 		}
 		
-		if(op1 == 1) {
-			calmos ++;
-		}
-		if(op==1 && op1==2 ) {
-			mulNerv ++;
-		}
-		if (op==2 && op1==3) {;
-		homAgr ++;
-		}
-		if(op==3 && op1==1) {
-			outCal ++;
-		}
-		if (idade>=40 && op1==2) {
-			nerv40 ++;
-		}
-		if(idade<=18 && op1==1) {
-			calm18++;
-		}
-
-		while(pessoas<=3) {
-
-			if(op1 == 1) {
-				calmos ++;
-			}
-			if(op==1 && op1==2 ) {
-				mulNerv ++;
-			}
-			if (op==2 && op1==3) {;
-			homAgr ++;
-			}
-			if(op==3 && op1==1) {
-				outCal ++;
-			}
-			if (idade>=40 && op1==2) {
-				nerv40 ++;
-			}
-			if(idade<=18 && op1==1) {
-				calm18++;
-			}
-
-			pessoas ++;
-			System.out.println("Insira a idade da pessoa: ");
+		pessoas++;
+		
+		while (pessoas<150) {
+			
+			System.out.println("Insira sua idade ");
 			idade = leia.nextInt();
 
-			System.out.println ("\n1- Feminino");
-			System.out.println ("\n2- Masculino");
-			System.out.println ("\n3- Outros");
-			op = leia.nextInt();
+			System.out.println("Insira seu gênero: ");
+			System.out.println("1- Masculino");
+			System.out.println("2- Feminino");
+			System.out.println("3- Outros");
+			genero= leia.nextInt();
+			
+			System.out.println("Insira seu estado mental:  ");
+			System.out.println("1- Calma");
+			System.out.println("2- Nervosa");
+			System.out.println("3- Agressiva");
+			saude= leia.nextInt();
+			
 
-			switch (op) {
-			case 1:
-				System.out.println("\n1- Feminino");
-				break;
-			case 2:
-				System.out.println("\n2 - Masculino");
-				break;
-			case 3:
-				System.out.println("\n23 - Outros");
-				break;
-
-			default: 
-				System.out.println("\nOpção inválida");
+			if(saude==1) {
+				contCalm++;
+			}if (genero==2 && saude==2 ) {
+				contFem ++;
+			}if (genero==1 && saude == 3) {
+				contMasc++;
+			}if(genero==3 && saude==1) {
+				contOut++;
+			}if(idade>=40 && saude == 2) {
+				contQua ++;
+			}if (idade<=18 && saude ==1) {
+				contDezoi ++;
 			}
-
-			System.out.println ("\n1- Calma");
-			System.out.println ("\n2- Nervosa");
-			System.out.println ("\n3- Agressiva");
-			op1 = leia.nextInt();
-
-			switch (op1) {
-			case 1:
-				System.out.println("\n1- Calma");
-				break;
-			case 2:
-				System.out.println("\n2 - Nervosa");
-				break;
-			case 3:
-				System.out.println("\n3 - Agressiva");
-				break;
-
-			default: 
-				System.out.println("\nOpção inválida");
-			}
-
+			
+			pessoas++;
+			
+			
 		}
+		
+		System.out.println("\nO número de pessoas calmas é: "+contCalm);
+		System.out.println("\nO número de mulheres nervosas é: "+contFem);
+		System.out.println("\nO número de homens agressivos é: "+contMasc);
+		System.out.println("\nO número de Outros calmos é: "+contOut);
+		System.out.println("\nO número de pessoas nervosas acima de 40 anos é: "+contQua);
+		System.out.println("\nO número de pessoas calmas menor de 18 anos é: "+contDezoi);
+		
+		
 
-		System.out.println("\nO número de pessoas calmas é: " +calmos+", o de mulheres nervosas é: "+mulNerv+", o de homens agressivos é: "+homAgr+", o de pessoas nervosas com mais de 40 é: "+nerv40+", e o de pessoas calmas com menos de 18 é: "+calm18);
 	}
-
 }

@@ -17,8 +17,11 @@ public class Atividade_6 {
 		numero= leia.nextInt();
 
 		do{
+			if (numero==0) {
+			   System.out.println("Não é possível realizar operação");
+			}
 
-			if (numero%3==0) {
+			else if (numero%3==0) {
 
 				soma += numero;
 				contNum ++;	
@@ -28,9 +31,11 @@ public class Atividade_6 {
 			numero= leia.nextInt();
 
 		}while(numero != 0);
-
+        
+		if(contNum!=0){
 		media = soma/contNum;
 		System.out.println("A media dos números múltiplos por 3 é: "+media);
+		}
 	}
 
 }
